@@ -21,6 +21,8 @@ module Moversnmakers
     config.generators do |generate|
       generate.assets false
       generate.helper false
+      config.serve_static_assets = true
+
     end
 
     # Settings in config/environments/* take precedence over those specified here.

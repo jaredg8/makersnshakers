@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'rails_12factor', group: :production
+
 
 group :development, :test do
   gem 'pry-byebug'
