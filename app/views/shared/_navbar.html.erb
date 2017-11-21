@@ -7,17 +7,11 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Browse Items</a>
-<<<<<<< HEAD
-    <a href="" class="navbar-wagon-item navbar-wagon-link">List Item</a>
-    <%=link_to 'Sign up', new_user_registration_path%>
-    <%=link_to 'Login', new_user_session_path%>
- <!--    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a> -->
-=======
-    <%= link_to 'New Item', new_item_path %>
-    <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">New Item</a> -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a>
->>>>>>> 7dc05cb1c233b5bdcca069b7093f77e3f3eb3809
+    <%= link_to 'Browse Items', items_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to 'Add an Item', new_item_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+    <%= link_to 'Login', new_user_session_path %>
+
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
