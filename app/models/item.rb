@@ -3,6 +3,6 @@ class Item < ApplicationRecord
   has_many :reviews, as: :reviewable
   has_many :transactions
 
-  has_attachment :photo
+  # has_attachments :photos, maximum: 2
 end
 
