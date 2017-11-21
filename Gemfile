@@ -8,6 +8,8 @@ gem 'puma'
 gem 'rails', '5.0.6'
 gem 'redis'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
