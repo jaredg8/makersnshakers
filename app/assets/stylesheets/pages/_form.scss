@@ -1,11 +1,11 @@
 .form-container{
-  position: relative;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .form {
-  position: absolute;
-  top: 100px;
   background-color: #E0DDC3;
   width: 400px;
   text-align: center;
@@ -16,13 +16,8 @@
   }
 }
 
-.cream-wrapper {
-  background:rgba(0,0,0,0.1);
-}
 
 .cocktail-container {
-  position: absolute;
-  top: 100px;
   background-color: #E0DDC3;
   width: 400px;
   text-align: center;
