@@ -5,17 +5,12 @@
 # end
 
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
+  root to: 'pages#home'
 
-  
   resources :items
   resources :profiles, only: :show
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-    root to: 'pages#home'
   
-
-  
-
- mount Attachinary::Engine => "/attachinary"
-
 end
