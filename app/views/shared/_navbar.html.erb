@@ -8,14 +8,23 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <a href="" class="navbar-wagon-item navbar-wagon-link">Browse Items</a>
+<<<<<<< HEAD
+    <a href="" class="navbar-wagon-item navbar-wagon-link">List Item</a>
+    <%=link_to 'Sign up', new_user_registration_path%>
+    <%=link_to 'Login', new_user_session_path%>
+ <!--    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a> -->
+=======
     <%= link_to 'New Item', new_item_path %>
     <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">New Item</a> -->
     <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a>
+>>>>>>> 7dc05cb1c233b5bdcca069b7093f77e3f3eb3809
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/tonipanacek" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+<%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <!-- <img src="https://kitt.lewagon.com/placeholder/users/tonipanacek" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
