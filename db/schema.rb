@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20171121115105) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.string   "address"
     t.string   "city"
     t.string   "state"
@@ -66,8 +67,6 @@ ActiveRecord::Schema.define(version: 20171121115105) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "first_name"
-    t.string   "last_name"
     t.string   "provider"
     t.string   "uid"
     t.string   "facebook_picture_url"
