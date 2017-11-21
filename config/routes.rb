@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
-  get 'reviews/review'
 
-  get 'reviews/show'
 
+
+
+  # registrations/
+  # sessions/
+  # users/
   devise_for :users
-  resources :items
+
+  resources :items do
+    # POST /items/:item_id/reviews
+    resources :reviews, only: [:new, :create]
+  end
+
+
+  post "users/:user_id/reviews", to: "reviews#create"
+
 
   root to: 'pages#home'
 
