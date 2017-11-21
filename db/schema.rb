@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171121115105) do
-=======
-ActiveRecord::Schema.define(version: 20171121101519) do
->>>>>>> 7dc05cb1c233b5bdcca069b7093f77e3f3eb3809
+ActiveRecord::Schema.define(version: 20171121133532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,10 +44,12 @@ ActiveRecord::Schema.define(version: 20171121101519) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.text     "text"
-    t.integer  "object_id"
-    t.string   "object_type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "reviewable_id"
+    t.string   "reviewable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -85,21 +83,19 @@ ActiveRecord::Schema.define(version: 20171121101519) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-<<<<<<< HEAD
     t.string   "provider"
     t.string   "uid"
     t.string   "facebook_picture_url"
     t.string   "token"
     t.datetime "token_expiry"
-=======
     t.string   "first_name"
     t.string   "last_name"
->>>>>>> 7dc05cb1c233b5bdcca069b7093f77e3f3eb3809
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "items", "users"
+  add_foreign_key "reviews", "users"
   add_foreign_key "transactions", "items"
   add_foreign_key "transactions", "users"
 end

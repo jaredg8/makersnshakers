@@ -4,5 +4,4 @@ class Transaction < ApplicationRecord
 
   validates :meetup_location, :status, :price, presence: true
 
-
 end
