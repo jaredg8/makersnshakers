@@ -1,16 +1,18 @@
 <div class="wrapper">
   <div class="card-container">
     <div class="row">
-      <% @items.each do |item| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-color: pink">
+      <% @items.each do |item| %>
+        <div class="card" style="background-image: url('<%= cl_image_path item.photos.first.path, width:200, height: 200; %>')">
           <div class="card-content">
           <%= item.name %> <br>
           <%= link_to "See more", item_path(item), class: 'btn btn-primary btn-sm' %>
           </div>
         </div>
-      </div>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+

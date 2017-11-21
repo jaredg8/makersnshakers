@@ -8,6 +8,17 @@
 
 Item.destroy_all
 
+20.times do
+  item = Item.new(
+    name: Faker::Commerce.product_name,
+    price: Faker::Commerce.price,
+    category: Faker::Commerce.department,
+  )
+  item.save!
+  item.photo_urls = ['https://picsum.photos/200/300/?random', 'https://picsum.photos/200/300/?random']
+end
+
+
 urls = [
   'http://img.clubic.com/08254724-photo-xbox-console.jpg',
   'http://compass.xbox.com/assets/a5/d3/a5d3e0e4-38fd-42ab-90f4-e7b5112af4d1.png'
