@@ -1,0 +1,13 @@
+
+<div class="mnm-searchbar-search smallsearch col-sm-8 col-xs-11">
+  <div class="mnm-searchbar-input col-xs-11">
+    <%= simple_form_for :search,  url: items_path , :method => :get do |f| %>
+    <%= f.input :query, :autofocus => true, placeholder: "Try 'Drone' " %>
+    <%= f.submit "Search" %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
