@@ -76,12 +76,21 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
+
     faker (1.8.4)
       i18n (~> 0.5)
+
+    factory_bot (4.8.2)
+      activesupport (>= 3.0.0)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
+      railties (>= 3.0.0)
+
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
@@ -170,6 +179,10 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.0.6)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.2)
+      actionpack (~> 5.x, >= 5.0.1)
+      actionview (~> 5.x, >= 5.0.1)
+      activesupport (~> 5.x)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -198,6 +211,23 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rspec-core (3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-rails (3.7.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.0)
     sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -255,7 +285,10 @@ DEPENDENCIES
   cloudinary (= 1.1.7)
   coffee-rails
   devise
+
   faker
+
+  factory_bot_rails
   figaro
   font-awesome-sass
   jbuilder (~> 2.0)
@@ -269,14 +302,16 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.0.6)
+  rails-controller-testing
   rails_12factor
   redis
+  rspec-rails
   sass-rails
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
-  web-console (>= 3.3.0)
+  web-console
 
 RUBY VERSION
    ruby 2.3.5p376
