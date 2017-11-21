@@ -15,7 +15,7 @@ Item.destroy_all
     category: Faker::Commerce.department,
   )
   item.save!
-  item.photo_urls = ['https://picsum.photos/200/300/?random', 'https://picsum.photos/200/300/?random']
+  item.photo_urls = ['https://placeimg.com/640/480/tech', 'https://placeimg.com/640/480/tech']
 end
 
 
