@@ -8,6 +8,8 @@ gem 'puma'
 gem 'rails', '5.0.6'
 gem 'redis'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

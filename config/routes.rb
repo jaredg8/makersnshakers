@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
+  root to: 'pages#home'
 
-
-
-
-  # registrations/
-  # sessions/
-  # users/
-  devise_for :users
-
+  
+  resources :profiles, only: :show
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  
   resources :items do
     # POST /items/:item_id/reviews
     resources :reviews, only: [:new, :create]
@@ -15,9 +14,5 @@ Rails.application.routes.draw do
 
 
   post "users/:user_id/reviews", to: "reviews#create"
-
-
-  root to: 'pages#home'
-
-  # mount Attachinary::Engine => "/attachinary"
+  
 end
