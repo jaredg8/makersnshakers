@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
 
-    @items = @items.where("name ILIKE ?", params[:search][:name]) if params[:search]
+    @items = @items.where("name ilike ?", "%#{params[:search][:name]}%") if params[:search]
 
   end
 
@@ -52,6 +52,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :category, :search, photos: [])
+    params.require(:item).permit(:name, :description, :price, :category, :address, :search, photos: [])
   end
 end
