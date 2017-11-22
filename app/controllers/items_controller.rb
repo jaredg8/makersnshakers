@@ -16,13 +16,14 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-def create
-  @item = Item.new(item_params)
-  @item.user = current_user
-  if @item.save
-    redirect_to @item
-  else
-    render 'new'
+  def create
+    @item = Item.new(item_params)
+    @item.user = current_user
+    if @item.save
+      redirect_to @item
+    else
+      render 'new'
+    end
   end
 
   def edit
