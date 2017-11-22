@@ -7,5 +7,10 @@ class Item < ApplicationRecord
 
   has_attachments :photos, maximum: 2
 
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+    where("description LIKE ?", "%#{search}%")
+  end
+
 end
 
