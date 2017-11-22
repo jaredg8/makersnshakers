@@ -8,7 +8,7 @@
         <h4>$<%= item.price %>/day</h4>
       </div>
       <div class="card-body">
-        <h4><%= item.name %></h4>
+        <h4><%= item.name.truncate(23) %></h4>
         <div class="card-user">
           <% avatar_url = item.user.try(:facebook_picture_url) || "http://placehold.it/40x40" %>
           <%= image_tag avatar_url, class: "card-avatar" %>

@@ -48,6 +48,7 @@
   h4 {
     margin: 0px;
     padding: 5px;
+    font-size: 20px;
   }
 }
 
@@ -71,18 +72,17 @@ a:hover {
   text-decoration: none;
 }
 
-
-
 .card-user-details {
   margin-left: 10px;
-}
 
-h5 {
-  margin: 0px;
-}
+    h5 {
+    margin: 0px;
+    font-size: 14px;
+  }
 
-p {
-  color: $gray;
-  font-size: 0.7em;
-  margin: 0px;
+  p {
+    color: $gray;
+    font-size: 12px;
+    margin: 0px;
+  }
 }
