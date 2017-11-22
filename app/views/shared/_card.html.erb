@@ -1,0 +1,25 @@
+<div id="cards" class="cards row">
+  <% @items.each do |item| %>
+  <div class="card col-xs-12 col-lg-4">
+    <%= link_to item_path(item) do %>
+    <div class="card-wrapper">
+      <div class="card-bg" style="background-image: url('<%=cl_image_path item.photos.first.path, crop: :fill %>')"></div>
+      <div class="card-price">
+        <h4>$<%= item.price %>/day</h4>
+      </div>
+      <div class="card-body">
+        <h4><%= item.name %></h4>
+        <div class="card-user">
+          <% avatar_url = item.user.try(:facebook_picture_url) || "http://placehold.it/40x40" %>
+          <%= image_tag avatar_url, class: "card-avatar" %>
+          <div class="card-user-details">
+            <h5><%= item.user.try(:first_name) || "Michael Doe" %></h5>
+            <p>Berlin</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end  %>
+</div>
