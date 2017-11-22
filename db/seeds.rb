@@ -12,5 +12,14 @@ category = %w(Electronics Home & Garden Outdoors)
     address: "#{number.sample} #{street.sample}, Berlin, Germany"
   )
   item.save!
-  item.photo_urls = ['https://placeimg.com/640/480/tech', 'https://placeimg.com/640/480/tech']
+  item.photo_urls = ['https://source.unsplash.com/collection/1420950/1600x900', 'https://source.unsplash.com/collection/1420950/1600x900']
 end
+
+
+# user = User.new(
+#   first_name: Faker::Name.first_name,
+#   last_name: Faker::Name.last_name,
+#   address: "#{number.sample} #{street.sample}",
+#   city: "Berlin",
+#   email: Faker::Internet.email,
+#   )
