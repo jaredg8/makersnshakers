@@ -14,5 +14,6 @@
   <%= f.input :price%>
   <%= f.input :category %>
   <%= f.input :photos, as: :attachinary %>
-  <%= f.submit %>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+  <%= link_to 'Cancel', root_path, class: 'btn btn-danger'%>
 <% end %>
