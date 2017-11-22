@@ -14,6 +14,10 @@ class ItemsController < ApplicationController
     @items = @items.where("name ilike ?", "%#{params[:search][:name]}%") if params[:search]
   end
 
+  def category
+    @items = Item.where(category: category)
+  end
+
   def show
   end
 
