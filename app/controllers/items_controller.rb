@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :destroy, :show]
 
   def index
+
     @items = Item.where.not(latitude: nil, longitude: nil)
 
     @markers = Gmaps4rails.build_markers(@items) do |item, marker|
@@ -10,7 +11,8 @@ class ItemsController < ApplicationController
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
 
-    @items = @items.where(name: params[:search][:name]) if params[:search]
+    @items = @items.where("name ilike ?", "%#{params[:search][:name]}%") if params[:search]
+
   end
 
   def show
@@ -20,15 +22,15 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-def create
-  @item = Item.new(item_params)
-  @item.user = current_user
-  if @item.save
-    redirect_to @item
-  else
-    render 'new'
+  def create
+    @item = Item.new(item_params)
+    @item.user = current_user
+      if @item.save
+        redirect_to @item
+      else
+        render 'new'
+      end
   end
-end
 
   def edit
   end
@@ -50,6 +52,6 @@ end
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :category, photos: [])
+    params.require(:item).permit(:name, :description, :price, :category, :address, :search, photos: [])
   end
 end
