@@ -1,16 +1,19 @@
 <div class="banner" style="background-image: url('<%= image_path 'yellow-banner.jpg' %>');">
   <div class="banner-content">
     <h1>Movers 'n' Makers</h1>
-      <div class="form-inline">
-         <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
-         <%= f.error_notification %>
-         <%= f.full_error :confirmation_token %>
-         <div class="form-group">
-          <%= f.input :name, label: false, placeholder: 'Search item...' %>
-        </div>
-
+    <div class="form-inline">
+     <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
+     <%= f.error_notification %>
+     <%= f.full_error :confirmation_token %>
+     <div class="form-group">
+      <%= f.input :name, label: false, placeholder: 'Search item...' %>
+    </div>
         <%= f.submit " > ", :class => "btn btn-primary" %>
         <% end %>
-      </div>
+    </div>
   </div>
 </div>
+
+<%= render 'shared/category_button' %>
+
+
