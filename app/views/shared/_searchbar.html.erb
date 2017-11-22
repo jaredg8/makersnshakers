@@ -1,11 +1,12 @@
-<div class="form-inline">
-   <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
-   <%= f.error_notification %>
-   <%= f.full_error :confirmation_token %>
-   <div class="form-group">
-    <%= f.input :name, label: false, placeholder: 'Search item...' %>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-inline" >
+       <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
+       <%= f.error_notification %>
+       <%= f.full_error :confirmation_token %>
+      <%= f.input :name, label: false, placeholder: 'Find what you need...' %>
+      <%= f.submit " Search ", :class => "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
-
-  <%= f.submit " > ", :class => "btn btn-primary" %>
-  <% end %>
 </div>
