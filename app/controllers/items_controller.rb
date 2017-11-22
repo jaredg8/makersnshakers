@@ -2,11 +2,15 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :destroy, :show]
 
   def index
-    if params[:search]
-      @items = Item.where(name: params[:search][:name])
-    else
-      @items = Item.all
+    @items = Item.where.not(latitude: nil, longitude: nil)
+
+    @markers = Gmaps4rails.build_markers(@items) do |item, marker|
+      marker.lat item.latitude
+      marker.lng item.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
+
+    @items = @items.where(name: params[:search][:name]) if params[:search]
   end
 
   def show
@@ -24,6 +28,7 @@ def create
   else
     render 'new'
   end
+end
 
   def edit
   end
