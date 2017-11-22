@@ -2,12 +2,17 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :destroy, :show]
 
   def index
-    @items = Item.all
-    if params[:search]
-      @items = Item.where(name: params[:search][:name]).order("created_at DESC")
-    else
-      @items = Item.all.order("created_at DESC")
+
+    @items = Item.where.not(latitude: nil, longitude: nil)
+
+    @markers = Gmaps4rails.build_markers(@items) do |item, marker|
+      marker.lat item.latitude
+      marker.lng item.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
+
+    @items = @items.where("name ILIKE ?", params[:search][:name]) if params[:search]
+
   end
 
   def show
@@ -20,11 +25,11 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    if @item.save
-      redirect_to @item
-    else
-      render 'new'
-    end
+      if @item.save
+        redirect_to @item
+      else
+        render 'new'
+      end
   end
 
   def edit

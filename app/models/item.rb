@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   belongs_to :user
 
   has_many :reviews, as: :reviewable
@@ -6,11 +8,6 @@ class Item < ApplicationRecord
 
 
   has_attachments :photos, maximum: 2
-
-  def self.search(search)
-    where("name LIKE ?", "%#{search}%")
-    where("description LIKE ?", "%#{search}%")
-  end
 
 end
 
