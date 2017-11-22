@@ -16,7 +16,7 @@ end
 
 def create
   @item = Item.new(item_params)
-  @item.user_id = current_user
+  @item.user = current_user
   if @item.save
     redirect_to @item
   else
