@@ -1,1 +1,22 @@
+.search  {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: light-gray;
+  height: 20px;
 
+}
+
+.search .form-group.search_name {
+  width: 90%;
+
+}
+
+.search .form-inline .form-control {
+  width: 100%;
+}
+
+input#search_name {
+  width: 100%
+}
