@@ -10,7 +10,7 @@
       <div class="card-body">
         <h4><%= item.name.truncate(23) %></h4>
         <div class="card-user">
-          <% avatar_url = item.user.try(:facebook_picture_url) || "http://placehold.it/40x40" %>
+          <% avatar_url = item.user.try(:facebook_picture_url) || "michael.jpg" %>
           <%= image_tag avatar_url, class: "card-avatar" %>
           <div class="card-user-details">
             <h5><%= item.user.try(:first_name) || "Michael Doe" %></h5>
