@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'transactions/new'
-
-  get 'transactions/show'
-
-  get 'transactions/edit'
-
-  get 'transactions/destroy'
-
   mount Attachinary::Engine => "/attachinary"
   root to: 'pages#home'
 
@@ -25,6 +17,8 @@ Rails.application.routes.draw do
       get 'category', to: "items#category"
     end
   end
+
+  resources :transactions, only: [:new, :create, :show]
 
   post "users/:user_id/reviews", to: "reviews#create"
 
