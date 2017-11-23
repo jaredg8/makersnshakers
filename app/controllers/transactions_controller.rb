@@ -5,6 +5,8 @@ class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new(transaction_params)
     @transaction.item = @item
+    @transaction.start_date = params[:transaction][:start_date].to_date
+    @transaction.end_date = params[:transaction][:end_date].to_date
   end
 
   def create
