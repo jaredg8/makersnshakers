@@ -4,12 +4,10 @@
     <h1>And Lend What They Don’t </h1>
     <div class="form-inline">
      <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
-     <%= f.error_notification %>
-     <%= f.full_error :confirmation_token %>
      <div class="form-group">
       <%= f.input :name, label: false, placeholder: 'Find an item...' %>
-    </div>
         <%= f.submit " Search ", :class => "btn btn-danger" %>
+    </div>
         <% end %>
     </div>
   </div>

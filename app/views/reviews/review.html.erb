@@ -1,2 +1,16 @@
+
 <h1>Reviews#review</h1>
 <p>Find me in app/views/reviews/review.html.erb</p>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-inline" >
+      <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.full_error :confirmation_token %>
+      <%= f.input :name, label: false, placeholder: 'Find an item...' %>
+      <%= f.submit " Search ", :class => "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
