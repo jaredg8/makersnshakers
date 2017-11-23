@@ -1,0 +1,17 @@
+<h1>Review your order</h1>
+<%= @item.name %>
+
+<br>
+
+<%= @transaction.start_date %>
+<%= @transaction.end_date %>
+<%= @transaction.rental_days %>
+<%= @transaction.final_price %>
+
+
+<%= simple_form_for @transaction, url: item_transactions_path(@item) do |f| %>
+  <%= f.submit "Confirm",class: "btn btn-primary" %>
+  <%= link_to "Cancel", root_path, class: 'btn btn-danger'%>
+  <%= hidden_field_tag :start_date, (params[:transaction][:start_date]) %>
+  <%= hidden_field_tag :end_date, (params[:transaction][:end_date]) %>
+<% end %>

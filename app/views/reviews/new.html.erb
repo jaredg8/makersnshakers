@@ -1,0 +1,7 @@
+<div class="review_form">
+  <%= simple_form_for [@transaction, @review] do |f| %>
+    <%= f.input :text %>
+    <%= f.input :rating %>
+    <%= f.submit %>
+  <% end %>
+</div>
