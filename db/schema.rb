@@ -93,13 +93,13 @@ ActiveRecord::Schema.define(version: 20171123114900) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "provider"
     t.string   "uid"
     t.string   "facebook_picture_url"
     t.string   "token"
     t.datetime "token_expiry"
-    t.string   "first_name"
-    t.string   "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
