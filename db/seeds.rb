@@ -15,6 +15,12 @@ category = %w(Electronics Home & Garden Outdoors)
   item.photo_urls = ['https://source.unsplash.com/collection/1420950/1600x900', 'https://source.unsplash.com/collection/1420950/1600x900']
 end
 
+Transaction.create(
+  meetup_location: "berlin",
+  status: 1,
+  item: Item.last
+  )
+
 
 # user = User.new(
 #   first_name: Faker::Name.first_name,
