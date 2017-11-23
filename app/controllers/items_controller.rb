@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
 
     @items = Item.where(category: params[:category]) if params[:category]
   end
-
+  
   def show
   end
 
