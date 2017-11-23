@@ -9,7 +9,7 @@
 <%= @transaction.final_price %>
 
 
-<%= simple_form_for [@item, @transaction] do |f| %>
+<%= simple_form_for @transaction, url: item_transactions_path(@item) do |f| %>
   <%= f.submit "Confirm",class: "btn btn-primary" %>
   <%= link_to "Cancel", root_path, class: 'btn btn-danger'%>
   <%= hidden_field_tag :start_date, (params[:transaction][:start_date]) %>

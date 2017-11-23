@@ -9,6 +9,8 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
+    @transaction.start_date = params[:start_date].to_date
+    @transaction.end_date = params[:end_date].to_date
     @transaction.item = @item
     @transaction.user = current_user
 
@@ -35,6 +37,6 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    params.require(:transaction).permit(:start_date, :end_date)
+    params.permit(:start_date, :end_date)
   end
 end
