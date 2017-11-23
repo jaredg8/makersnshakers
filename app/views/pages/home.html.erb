@@ -2,13 +2,13 @@
   <div class="banner-content">
     <h1>Helping Makers Get What They Need</h1>
     <h1>And Lend What They Don’t </h1>
-    <div class="form-inline">
-     <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
-     <div class="form-group">
-      <%= f.input :name, label: false, placeholder: 'Find an item...' %>
+      <div class="form-inline">
+        <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
+      <div class="form-group">
+        <%= f.input :name, label: false, placeholder: 'Find an item...' %>
         <%= f.submit " Search ", :class => "btn btn-danger" %>
-    </div>
-        <% end %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
