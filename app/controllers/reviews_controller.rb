@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       # Success scenario
-      redirect_to root_path
+      redirect_to items_path
     else
     end
   end
