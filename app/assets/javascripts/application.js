@@ -32,3 +32,11 @@ $('[data-provide=datepicker]').datepicker({
       format: 'yyyy-mm-dd',
 
 });
+
+
+var toggleSave = function(){
+  value = $('#transaction_start_date').val() != "" && $('#transaction_end_date').val() != ""
+  $('#booking_submit').attr('disabled', !value);
+};
+
+$('#transaction_start_date, #transaction_end_date').on('change', toggleSave);
