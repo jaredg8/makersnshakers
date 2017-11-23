@@ -1,5 +1,11 @@
 class TransactionsController < ApplicationController
+
   def new
+    @transction = Transaction.new
+  end
+
+  def create
+
   end
 
   def show
