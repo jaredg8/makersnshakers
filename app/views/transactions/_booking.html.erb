@@ -1,11 +1,19 @@
-<%= simple_form_for :transaction, url: new_item_transaction_path(@item), method: :get  do |f| %>
-<%= f.error_notification %>
+<% if current_user %>
 
-<div class="form-inline">
-  <%= f.input :start_date, as: :string, class: 'datepicker form-control', input_html: { 'data-provide': 'datepicker' }, label: false, placeholder: "Start date" %>
-  <%= f.input :end_date, as: :string, class: 'datepicker form-control', input_html: { 'data-provide': 'datepicker' }, label: false, placeholder: "End date" %>
-  <%= hidden_field_tag :item_id, (params[:id]) %>
-  <%= hidden_field_tag :current_user, (current_user.id) %>
-  <%= f.button :submit %>
-</div>
+  <%= simple_form_for :transaction, url: new_item_transaction_path(@item), method: :get  do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inline">
+    <%= f.input :start_date, required: true, as: :string, class: 'datepicker form-control', input_html: { 'data-provide': 'datepicker' }, label: false, placeholder: "Start date" %>
+    <%= f.input :end_date, required: true, as: :string, class: 'datepicker form-control', input_html: { 'data-provide': 'datepicker' }, label: false, placeholder: "End date" %>
+    <%= hidden_field_tag :item_id, (params[:id]) %>
+    <%= hidden_field_tag :current_user, (current_user.id) %>
+    <%= f.button :submit, "Save", disabled: true, id: 'booking_submit' %>
+  </div>
+  <% end %>
+
+<% else %>
+  <p>To book this item</p>
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %> or <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+
 <% end %>
