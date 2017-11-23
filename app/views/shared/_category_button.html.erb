@@ -6,24 +6,23 @@
     <div class="col-xs-12 col-lg-4">
       <div class="category-block">
         <%= image_tag 'electronics.png', class: 'category-image' %>
-        <h4><%= link_to "Electronics", items_path %></h4>
-
+        <h4><%= link_to "Electronics", items_path(category: "Electronics") %></h4>
       </div>
     </div>
 
     <div class="col-xs-12 col-lg-4">
       <div class="category-block">
         <%= image_tag 'home-garden.png', class: 'category-image' %>
-        <h4><%= link_to "Home & Garden", items_path %></h4>
+        <h4><%= link_to "Home & Garden", items_path(category: "Home & Garden") %></h4>
       </div>
     </div>
 
     <div class="col-xs-12 col-lg-4">
       <div class="category-block">
         <%= image_tag 'outdoors.png', class: 'category-image' %>
-        <h4><%= link_to "Outdoors", items_path %></h4>
+        <h4><%= link_to "Outdoors", items_path(category: "Outdoors") %></h4>
       </div>
     </div>
-
   </div>
 </div>
+
