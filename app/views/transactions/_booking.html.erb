@@ -1,12 +1,11 @@
-<%= simple_form_for @transction do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for(Transaction.new, url: new_transaction_path, method: :get) do |f| %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<div class="form-inline">
+  <%= f.date_field :start_date, 'data-provide': 'datepicker', class: 'datepicker' %>
+  <%= f.date_field :end_date, 'data-provide': 'datepicker' %>
+  <%= hidden_field_tag :item_id, (params[:id]) %>
+  <%= hidden_field_tag :current_user, (current_user.id) %>
+  <%= f.button :submit %>
+</div>
 <% end %>
