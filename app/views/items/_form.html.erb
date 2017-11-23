@@ -12,7 +12,7 @@
   <%= f.input :description %>
   <%= f.input :address %>
   <%= f.input :price%>
-  <%= f.input :category %>
+  <%= f.input :category, collection: ["Electronics", "Home & Garden", "Outdoor"], prompt: "Select category"%>
   <%= f.input :photos, as: :attachinary %>
   <%= f.submit "Add", class: "btn btn-primary" %>
   <%= link_to 'Cancel', root_path, class: 'btn btn-danger'%>
