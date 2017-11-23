@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :items do
+
     resources :transactions, only: [:new, :create]
     resources :reviews, only: [:new, :create]
     collection do
@@ -15,7 +16,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :transactions, only: :show
+
+  resources :transactions, only: :show do
+      resources :reviews, only: [:new, :create]
+  end
 
   post "users/:user_id/reviews", to: "reviews#create"
 

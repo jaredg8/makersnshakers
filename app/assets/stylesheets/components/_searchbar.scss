@@ -3,20 +3,25 @@
   margin-top: 30px;
   margin-bottom: 20px;
   text-align: center;
-  background-color: light-gray;
   height: 20px;
-
 }
 
 .search .form-group.search_name {
-  width: 87%;
-
+  width: 60%;
 }
 
 .search .form-inline .form-control {
   width: 100%;
 }
 
-input#search_name {
-  width: 100%
+body.items.index input#search_name {
+  width: 100%;
+}
+
+body.pages.home input#search_name {
+  width: 100%;
+}
+
+select#search_category {
+  width: 200px;
 }
