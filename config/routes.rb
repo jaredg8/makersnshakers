@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'transactions/new'
+
+  get 'transactions/show'
+
+  get 'transactions/edit'
+
+  get 'transactions/destroy'
+
   mount Attachinary::Engine => "/attachinary"
   root to: 'pages#home'
 
