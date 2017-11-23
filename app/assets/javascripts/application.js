@@ -24,8 +24,9 @@ $(document).ready(function() {
 
     $('#calendar').fullCalendar({
         // put your options and callbacks here
-    })
-
+    });
+  }
+);
 
 $('[data-provide=datepicker]').datepicker({
       format: 'yyyy-mm-dd',
