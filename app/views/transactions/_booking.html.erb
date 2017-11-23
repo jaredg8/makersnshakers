@@ -2,8 +2,8 @@
 <%= f.error_notification %>
 
 <div class="form-inline">
-  <%= f.date_field :start_date, 'data-provide': 'datepicker', class: 'datepicker' %>
-  <%= f.date_field :end_date, 'data-provide': 'datepicker' %>
+  <%= f.input :start_date, as: :string, class: 'datepicker form-control', input_html: { 'data-provide': 'datepicker' }, label: false, placeholder: "Start date"  %>
+  <%= f.input :end_date, as: :string, class: 'datepicker form-control', input_html: { 'data-provide': 'datepicker' }, label: false, placeholder: "End date" %>
   <%= hidden_field_tag :item_id, (params[:id]) %>
   <%= hidden_field_tag :current_user, (current_user.id) %>
   <%= f.button :submit %>

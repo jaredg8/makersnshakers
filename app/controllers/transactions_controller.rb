@@ -4,11 +4,14 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = Transaction.new
+    raise
+    @final_price = ((params[:transaction][:end_date].to_date - params[:transaction][:start_date].to_date).to_i * @item.price)
   end
 
   def create
     @transaction = Transaction.new(transction_params)
     @transaction.item = @item
+
   end
 
   def show
