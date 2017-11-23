@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   resources :items do
     # POST /items/:item_id/reviews
-    resources :reviews, only: [:new, :create]
   end
 
   resources :items do
@@ -17,6 +16,16 @@ Rails.application.routes.draw do
       get 'category', to: "items#category"
     end
   end
+
+  resources :transactions, only: [:show] do
+      resources :reviews, only: [:new, :create]
+  end
+
+
+   # POST /transactions/:transaction_id/reviews
+
+
+
 
   post "users/:user_id/reviews", to: "reviews#create"
 
