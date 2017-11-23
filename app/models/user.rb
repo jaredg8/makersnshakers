@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
   has_many :reviews, as: :reviewable
-  # has_many :items
-  # has_many :transactions
+  has_many :transactions
+  has_many :items
 
   # [...]
   def self.find_for_facebook_oauth(auth)
