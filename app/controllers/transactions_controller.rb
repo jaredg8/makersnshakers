@@ -17,7 +17,7 @@ class TransactionsController < ApplicationController
     @transaction.user = current_user
 
     if @transaction.save
-      redirect_to @item
+      redirect_to root_path
     else
       render 'new'
     end
