@@ -1,5 +1,4 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
     <%= image_tag "logo.png" %>
     <h1>Movers 'n' Makers</h1>
@@ -13,10 +12,8 @@
       <div class="dropdown">
         <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
         <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-      <!--   <img src="https://kitt.lewagon.com/placeholder/users/tonipanacek" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-      -->        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Dashboard</a></li>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to 'Dashboard', dashboard_path %></li>
         <li><%= link_to('Log out', destroy_user_session_path, method: :delete) %></li>
       </ul>
     </div>
@@ -29,8 +26,6 @@
   </div>
   <% end %>
 </div>
-
-<!-- Profile picture with dropdown list -->
 
 
 
