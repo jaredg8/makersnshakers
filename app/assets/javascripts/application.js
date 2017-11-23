@@ -11,3 +11,7 @@
 //= require gmaps/google
 
 //= require_tree .
+
+$('[data-provide=datepicker]').datepicker({
+      format: 'yyyy-mm-dd',
+});

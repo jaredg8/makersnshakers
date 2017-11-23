@@ -3,17 +3,20 @@ class TransactionsController < ApplicationController
   before_action :set_item, only: [:new, :create]
 
   def new
-    @transaction = Transaction.new
-    start_date = params[:booking][:start_date]
-    end_date = params[:booking][:end_date]
-
-    @final_price = (( date_formatted(end_date) - date_formatted(start_date) ).to_i * @item.price)
+    @transaction = Transaction.new(transaction_params)
+    @transaction.item = @item
   end
 
   def create
-    @transaction = Transaction.new(transction_params)
+    @transaction = Transaction.new(transaction_params)
     @transaction.item = @item
+    @transaction.user = current_user
 
+    if @transaction.save
+      redirect_to @transaction
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -31,7 +34,7 @@ class TransactionsController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
-  def date_formatted(var)
-    Date.strptime(var, '%m/%d/%Y')
+  def transaction_params
+    params.require(:transaction).permit(:start_date, :end_date, :user_id)
   end
 end

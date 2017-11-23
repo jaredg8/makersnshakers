@@ -1,3 +1,15 @@
 <h1>Review your order</h1>
 <%= @item.name %>
-<%= @final_price %>
+
+<br>
+
+<%= @transaction.start_date %>
+<%= @transaction.end_date %>
+<%= @transaction.rental_days %>
+<%= @transaction.final_price %>
+
+
+<%= simple_form_for [@item, @transaction] do |f| %>
+  <%= f.submit "Confirm",class: "btn btn-primary" %>
+  <%= link_to 'Cancel', root_path, class: 'btn btn-danger'%>
+<% end %>
