@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/dashboard', to: "pages#dashboard"
+  get '/calendar', to: "pages#calendar"
+  get '/messages', to: "pages#messages"
 
   resources :profiles, only: :show
   devise_for :users,

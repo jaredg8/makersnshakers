@@ -5,9 +5,9 @@ class PagesController < ApplicationController
   def dashboard
   end
 
-  def bookings
+  def calendar
   end
 
-  def my_items
+  def messages
   end
 end

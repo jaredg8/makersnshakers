@@ -5,13 +5,13 @@ class ItemsController < ApplicationController
 
     @items = Item.where.not(latitude: nil, longitude: nil)
 
+    @items = @items.where("name ilike ?", "%#{params[:search][:name]}%") if params[:search]
+
     @markers = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
       marker.lng item.longitude
       marker.infowindow render_to_string(partial: "/items/map_box", locals: { item: item })
     end
-
-    @items = @items.where("name ilike ?", "%#{params[:search][:name]}%") if params[:search]
   end
 
   def category

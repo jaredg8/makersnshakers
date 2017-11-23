@@ -1,0 +1,13 @@
+#calendar {
+  width: 600px;
+  background: white;
+}
+
+.calendar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  h2 {
+    font-size: 35px;
+  }
+}
