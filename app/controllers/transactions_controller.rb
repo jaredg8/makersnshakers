@@ -4,8 +4,10 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = Transaction.new
-    raise
-    @final_price = ((params[:transaction][:end_date].to_date - params[:transaction][:start_date].to_date).to_i * @item.price)
+    start_date = params[:booking][:start_date]
+    end_date = params[:booking][:end_date]
+
+    @final_price = (( date_formatted(end_date) - date_formatted(start_date) ).to_i * @item.price)
   end
 
   def create
@@ -23,7 +25,13 @@ class TransactionsController < ApplicationController
   def destroy
   end
 
+  private
+
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def date_formatted(var)
+    Date.strptime(var, '%m/%d/%Y')
   end
 end
