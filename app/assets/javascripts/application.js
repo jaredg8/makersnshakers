@@ -17,7 +17,6 @@
 //= require_tree .
 
 
-
 $(document).ready(function() {
 
     // page is now ready, initialize the calendar...
@@ -40,3 +39,4 @@ var toggleSave = function(){
 };
 
 $('#transaction_start_date, #transaction_end_date').on('change', toggleSave);
+
