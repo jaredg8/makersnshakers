@@ -23,7 +23,7 @@
       <div class="dash-card stat">
         <div class="stats-listings">
           <h3>My Listings:</h3>
-          <% if current_user.items %>
+          <% if current_user.items.any? %>
           <% current_user.items.each do |item|%>
           <%= link_to item_path(item) do %>
             <div class="card-listings"><%= item.name %></div>
@@ -31,7 +31,7 @@
           <% end %>
           <% else %>
           <p>You have no current listings.</p>
-          <%= link_to 'Add an item!', new_item_path %>
+          <%= link_to 'Add an item!', new_item_path, class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
@@ -39,8 +39,10 @@
         <div class="stats-rentals">
           <h3>My Rentals:</h3>
           <% if current_user.transactions.any? %>
-          <% current_user.transactions do |transaction| %>
-            <div class="card-listings"><%= transaction.item.name %></div>
+          <% current_user.transactions.each do |transaction| %>
+              <div class="card-listings">
+                <%= transaction.item.name %>
+              </div>
             <% end %>
           <% else %>
           <p>You have no current rentals.</p>
