@@ -11,5 +11,7 @@
 
 <%= simple_form_for [@item, @transaction] do |f| %>
   <%= f.submit "Confirm",class: "btn btn-primary" %>
-  <%= link_to 'Cancel', root_path, class: 'btn btn-danger'%>
+  <%= link_to "Cancel", root_path, class: 'btn btn-danger'%>
+  <%= hidden_field_tag :start_date, (params[:transaction][:start_date]) %>
+  <%= hidden_field_tag :end_date, (params[:transaction][:end_date]) %>
 <% end %>

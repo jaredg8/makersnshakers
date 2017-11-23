@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
     @transaction.user = current_user
 
     if @transaction.save
-      redirect_to @transaction
+      redirect_to @item
     else
       render 'new'
     end
@@ -35,6 +35,6 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    params.require(:transaction).permit(:start_date, :end_date, :user_id)
+    params.require(:transaction).permit(:start_date, :end_date)
   end
 end
