@@ -1,0 +1,26 @@
+.profile-dashboard {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 300px 300px 300px;
+  height: calc(100vh - 70px);
+  margin: 20px;
+}
+
+.main {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+}
+
+.stats-listings {
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 1;
+}
+
+.stats-rentals {
+  grid-row: 1 / span 2;
+  grid-column: 3 / span 1;
+}
+.dashboard-avatar {
+  width: 100px;
+  border-radius: 50%;
+}

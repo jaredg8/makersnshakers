@@ -1,0 +1,38 @@
+  <div class="header-container text-center">
+    <h1><%= current_user.first_name %>'s Dashboard</h1>
+  </div>
+    <div class="container text-center">
+    <div class="profile-dashboard">
+      <div class="dash-card main">
+        <div class="main-section">
+          <%= image_tag current_user.facebook_picture_url, class: "dashboard-avatar" %>
+          <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+          <p>Berlin, Germany</p>
+        </div>
+      </div>
+      <div class="dash-card stat">
+        <div class="stats-listings">
+          <h3>My Listings:</h3>
+          <% if current_user.items %>
+          <ul>
+          <% current_user.items.each do |item|%>
+          <%= link_to item_path(item) do %>
+            <div class="card-listings"><%= item.name %></div>
+            <% end %>
+          <% end %>
+          </ul>
+          <% else %>
+          <p>You have no current listings.</p>
+          <%= link_to 'Add an item!', new_item_path %>
+          <% end %>
+        </div>
+      </div>
+      <div class="dash-card stat">
+        <div class="stats-rentals">
+          <h3>My Rentals</h3>
+          <p>You have no current rentals.</p>
+          <%= link_to 'Browse items!', items_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>

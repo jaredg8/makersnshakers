@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
   root to: 'pages#home'
 
+  get '/dashboard', to: "pages#dashboard"
 
   resources :profiles, only: :show
   devise_for :users,
