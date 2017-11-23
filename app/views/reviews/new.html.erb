@@ -1,7 +1,19 @@
-<div class="review_form">
-  <%= simple_form_for [@transaction, @review] do |f| %>
-    <%= f.input :text %>
-    <%= f.input :rating %>
-    <%= f.submit %>
-  <% end %>
+<div class="wrapper">
+  <div class="main-container">
+    <div class="container">
+      <h3>The Awesome Review Page!</h3>
+      <div class="review_form">
+        <%= simple_form_for [@transaction, @review] do |f| %>
+          <%= f.input :text, label:false, placeholder: 'Any feedback about the transaction?' %>
+          <%= f.input :rating, collection: 1..5, label:false, prompt: 'Rate the transaction 1-5' %>
+           <%= f.input :item_text, label:false, placeholder: 'Any feedback about the item?' %>
+          <%= f.input :item_rating, collection: 1..5, label:false, prompt: 'Rate the item 1-5' %>
+          <%= f.submit " Submit ", :class => "btn btn-danger"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
