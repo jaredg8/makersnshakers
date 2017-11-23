@@ -1,16 +1,9 @@
 <div class="review_form">
-  <%= form_tag transaction_reviews_path(@transaction) do |f| %>
-    <%= text_area_tag :transaction_review_text %>
-    <%= text_area_tag :item_review_text  %>
-    <%= f.number_field :rating, class: 'rating' %>
-    <%= f.submit 'Add', class: 'btn btn-primary btn-danger' %>
-  <% end  %>
+  <%= simple_form_for [@transaction, @review] do |f| %>
+    <%= f.input :text, label:false, placeholder: 'Any feedback about the transaction?' %>
+    <%= f.input :rating, collection: 1..5, label:false, prompt: 'Rate the transaction 1-5' %>
+     <%= f.input :item_text, label:false, placeholder: 'Any feedback about the item?' %>
+    <%= f.input :item_rating, collection: 1..5, label:false, prompt: 'Rate the item 1-5' %>
+    <%= f.submit " Submit ", :class => "btn btn-danger"%>
+  <% end %>
 </div>
-
-<% @item.rating.to_i.times do  %>
- <span class="glyphicon glyphicon-star"></span>
-<% end %>
-
-<% @transaction.rating.to_i.times do  %>
- <span class="glyphicon glyphicon-star"></span>
-<% end %>
