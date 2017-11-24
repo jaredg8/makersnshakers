@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card col-md-6 col-md-offset-3">
+  <div class="col-md-4 col-md-offset-4">
 
 
     <div class="transaction-box-wrapper">
@@ -10,21 +10,39 @@
           <h1>Rental sumary:</h1>
           <h2><%= @item.name %></h2>
         </div>
-        <div class="card-user-details">
 
+        <div class="hline"></div>
 
-          <%= @transaction.start_date %>
-          <%= @transaction.end_date %>
-          <%= @transaction.rental_days %>
-          <%= @transaction.final_price %>
+        <div class="transaction-details">
+          <p><i class="fa fa-calendar-o" aria-hidden="true"></i></p>
+          <p><%= @transaction.start_date %></p>
+          <p><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+          <p><%= @transaction.end_date %></p>
+        </div>
+        <div class="transaction-details" style="text-indent: 43px;">
+          <p>$<%= @item.price %> x <%= @transaction.rental_days %> days</p>
+          <p>$<%= @transaction.final_price %></p>
+        </div>
+        <div class="transaction-details" style="text-indent: 43px;">
+          <p>Delivery fee</p>
+          <p>$8</p>
+        </div>
 
+        <div class="hline"></div>
 
-          <%= simple_form_for @transaction, url: item_transactions_path(@item) do |f| %>
-          <%= f.submit "Confirm",class: "btn btn-primary" %>
-          <%= link_to "Cancel", root_path, class: 'btn btn-danger'%>
+        <div class="transaction-details" style="text-indent: 43px;">
+          <p>Total price</p>
+          <p>$<%= @transaction.final_price + 8 %></p>
+        </div>
+
+        <%= simple_form_for @transaction, url: item_transactions_path(@item) do |f| %>
+        <div class="transaction-button-block">
+          <%= f.submit "Confirm",class: "btn btn-primary transaction-button" %>
+          <%= link_to "Cancel", root_path, class: 'btn btn-default transaction-button'%>
           <%= hidden_field_tag :start_date, (params[:transaction][:start_date]) %>
           <%= hidden_field_tag :end_date, (params[:transaction][:end_date]) %>
-          <% end %>
+        </div>
+        <% end %>
         </div>
       </div>
     </div>
