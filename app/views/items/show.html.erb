@@ -53,7 +53,7 @@
             <% transaction.reviews.each do |review| %>
               <p> Rating: <%= review.rating %> out of 5</p>
               <p> Review: <%= review.text %> </p>
-              <p> Reviewer name: <%= review.user.name %></p>
+              <p> Reviewer name: <%= review.user.first_name %></p>
               <div class="hline"></div>
             <% end %>
           <% end %>
