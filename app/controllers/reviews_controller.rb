@@ -12,10 +12,16 @@ class ReviewsController < ApplicationController
       @review.reviewable = @transaction
 
     if @review.save
+      respond_to do |format|
+        format.html {redirect_to items_path}
+        format.js
+      end
       # Success scenario
-      redirect_to items_path
     else
-      render 'items/show'
+      respond_to do |format|
+        format.html {'items/show'}
+        format.js
+      end
     end
   end
   private
