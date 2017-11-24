@@ -20,8 +20,8 @@
           <p>Berlin, Germany</p>
         </div>
         <div class="dash-list col-md-5">
-          <div class="stats-listings">
-            <h3>My Items:</h3>
+          <div>
+            <h3>My Items</h3>
             <% if current_user.items.any? %>
             <% current_user.items.each do |item|%>
 
@@ -40,7 +40,7 @@
         </div>
         <div class="dash-list col-md-5">
           <div class="stats-rentals">
-            <h3>My Rentals:</h3>
+            <h3>My Rentals</h3>
             <% if current_user.transactions.any? %>
             <% current_user.transactions.each do |transaction| %>
 
