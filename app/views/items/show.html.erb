@@ -54,7 +54,7 @@
               <p> # Of Reviews for <em><%= @item.name %></em>: <%= review.rating.size %></p>
               <p> Review Rating: <%= review.rating %> out of 5</p>
               <p> Transaction Review: <%= review.text %> </p>
-              <p> Item Review Text: <%= transaction.item.reviews %></p>
+              <p> Item Review Text: <%= review.item_text.inspect %></p>
               <p> Reviewer email: <%= review.user.email %></p>
             <% end %>
           <% end %>
