@@ -4,5 +4,5 @@ json.array!(@transactions) do |transaction|
   json.end transaction.end_date
   json.title transaction.item.name
   json.description transaction.item.description
-  json.url transaction_url(transaction, format: :html)
+  json.url item_url(transaction.item, format: :html)
 end
