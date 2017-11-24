@@ -1,6 +1,10 @@
 class TransactionsController < ApplicationController
 
   before_action :set_item, only: [:new, :create]
+  def index
+    @transactions = current_user.all_transactions
+
+  end
 
   def new
     @transaction = Transaction.new(transaction_params)
