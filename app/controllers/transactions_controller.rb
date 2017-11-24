@@ -7,6 +7,14 @@ class TransactionsController < ApplicationController
     @transaction.item = @item
     @transaction.start_date = params[:transaction][:start_date].to_date
     @transaction.end_date = params[:transaction][:end_date].to_date
+
+
+
+    respond_to do |format|
+      format.js
+      format.html { render :new  }
+
+    end
   end
 
   def create
