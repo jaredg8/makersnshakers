@@ -3,17 +3,18 @@
   <%= simple_form_for :transaction, url: new_item_transaction_path(@item), method: :get  do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inline">
+  <div>
     <%= f.input :start_date, required: true, as: :string, class: 'datepicker form-control', input_html: { 'data-provide': 'datepicker' }, label: false, placeholder: "Start date" %>
     <%= f.input :end_date, required: true, as: :string, class: 'datepicker form-control', input_html: { 'data-provide': 'datepicker' }, label: false, placeholder: "End date" %>
     <%= hidden_field_tag :item_id, (params[:id]) %>
     <%= hidden_field_tag :current_user, (current_user.id) %>
-    <%= f.button :submit, "Save", disabled: true, id: 'booking_submit' %>
+    <%= f.button :submit, "Book", disabled: true, id: 'booking_submit', class: "btn btn-primary btn-block" %>
+    <p class="booking-notes">You won't be charged yet</p>
   </div>
   <% end %>
 
 <% else %>
-  <p>To book this item</p>
-  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %> or <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+  <p class="text-center">To book this item</p>
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-block" %> or <%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-block" %>
 
 <% end %>

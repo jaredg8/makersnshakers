@@ -1,69 +1,81 @@
-<div class="main-container">
-
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-lg-7">
-        <div class="show-product">
 
 
-          <h1><%= @item.name %></h1>
-
-          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
+<div class="container text-center">
+  <div class="row row-100">
+    <div class="col-md-7">
+      <div class="show-product">
 
 
-            <div class="carousel-inner">
+        <h1><%= @item.name %></h1>
 
-              <div class="item active"><%= cl_image_tag @item.photos.first.path %></div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
 
-              <% collection = @item.photos[1..-1]  %>
-              <% collection.each do |photo| %>
-              <div class="item">
-                <%= cl_image_tag photo.path %>
-              </div>
-              <% end %>
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
 
 
-              <!-- Left and right controls -->
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-              </a>
+          <div class="carousel-inner">
+
+            <div class="item active"><%= cl_image_tag @item.photos.first.path %></div>
+
+            <% collection = @item.photos[1..-1]  %>
+            <% collection.each do |photo| %>
+            <div class="item">
+              <%= cl_image_tag photo.path %>
+            </div>
+            <% end %>
+
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="show-decription">
+          <h4>Description</h4>
+          <p><%= @item.description %></p>
+          <div class="back-button" style="width: 60px; margin: 20px 0px">
+            <%= link_to "Back", items_path, class: "btn btn-primary btn-lg" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-4 col-md-offset-1 form-sticky">
+
+      <div class="booking-form">
+        <h3>$<%= @item.price %> <span style="font-size: 20px">per day</span> </h3>
+        <p>Check reviews</p>
+        <div class="hline"></div>
+        <%= render 'transactions/booking' %>
+        <div class="hline"></div>
+        <p>Borrowing item from</p>
+        <div class="item-user">
+          <div class="item-user-tag">
+            <% avatar_url = @item.user.try(:facebook_picture_url) || "michael.jpg" %>
+            <%= image_tag avatar_url, class: "item-avatar" %>
+            <div class="item-user-details">
+              <h5><%= @item.user.try(:first_name) || "Michael Doe" %></h5>
             </div>
           </div>
-          <div class="show-decription">
-            <h4>Description</h4>
-            <p><%= @item.description %></p>
-          </div>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
         </div>
-      </div>
-
-
-      <div class="col-lg-1">
-      </div>
-
-      <div class="col-lg-4">
-
-        <div>
-          <%= render 'transactions/booking' %>
-        </div>
-
       </div>
 
     </div>
-  </div>
-  <div class="back-button" style="width: 60px">
-    <%= link_to "Back", items_path, class: "btn btn-primary btn-lg", style: "margin: 10px" %>
+
   </div>
 </div>
