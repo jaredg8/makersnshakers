@@ -2,3 +2,7 @@
   font-size: 12px;
   text-align: center;
 }
+
+td.active .day {
+  background-color: $yellow;
+}
