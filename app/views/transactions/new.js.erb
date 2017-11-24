@@ -1,0 +1,19 @@
+var html = "<%= j render 'confirmation_widget', transaction: @transaction , item: @item, layout: false %>";
+var doc = document.getElementById('myModal');
+doc.innerHTML = html;
+
+
+$('.cancel-modal').on('click', function(e){
+  e.preventDefault();
+  $('#myModal').modal('hide');
+
+});
+
+
+$('#myModal').modal('show');
+
+
+
+
+
+

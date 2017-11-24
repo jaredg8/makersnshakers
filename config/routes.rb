@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :transactions, only: :show do
+  resources :transactions, only: [:show, :index] do
       resources :reviews, only: [:new, :create]
   end
 
