@@ -1,36 +1,30 @@
 <div class="container">
-  <div class="card col-md-7 col-md-offset-3">
+  <div class="card col-md-6 col-md-offset-3">
 
 
-    <div class="card-wrapper">
-      <div class="card-bg" style="background-image: url('<%=cl_image_path @item.photos.first.path, crop: :fill %>')"></div>
-      <div class="card-body">
-        <h4><%= @item.name.truncate(23) %></h4>
-        <div class="card-user">
-          <% avatar_url = @item.user.try(:facebook_picture_url) || "michael.jpg" %>
-          <%= image_tag avatar_url, class: "card-avatar" %>
-          <div class="card-user-details">
-
-            <h1>Review your order</h1>
-            <%= @item.name %>
-
-            <br>
-
-            <%= @transaction.start_date %>
-            <%= @transaction.end_date %>
-            <%= @transaction.rental_days %>
-            <%= @transaction.final_price %>
+    <div class="transaction-box-wrapper">
+      <div class="transaction-bg" style="background-image: url('<%=cl_image_path @item.photos.first.path, crop: :fill %>')">
+      </div>
+      <div class="transaction-box-body">
+        <div class="transaction-title">
+          <h1>Rental sumary:</h1>
+          <h2><%= @item.name %></h2>
+        </div>
+        <div class="card-user-details">
 
 
-            <%= simple_form_for @transaction, url: item_transactions_path(@item) do |f| %>
-            <%= f.submit "Confirm",class: "btn btn-primary" %>
-            <%= link_to "Cancel", root_path, class: 'btn btn-danger'%>
-            <%= hidden_field_tag :start_date, (params[:transaction][:start_date]) %>
-            <%= hidden_field_tag :end_date, (params[:transaction][:end_date]) %>
-            <% end %>
+          <%= @transaction.start_date %>
+          <%= @transaction.end_date %>
+          <%= @transaction.rental_days %>
+          <%= @transaction.final_price %>
 
 
-          </div>
+          <%= simple_form_for @transaction, url: item_transactions_path(@item) do |f| %>
+          <%= f.submit "Confirm",class: "btn btn-primary" %>
+          <%= link_to "Cancel", root_path, class: 'btn btn-danger'%>
+          <%= hidden_field_tag :start_date, (params[:transaction][:start_date]) %>
+          <%= hidden_field_tag :end_date, (params[:transaction][:end_date]) %>
+          <% end %>
         </div>
       </div>
     </div>
