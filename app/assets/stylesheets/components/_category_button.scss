@@ -5,20 +5,21 @@
 
 .category-block {
   text-align: center;
+  h2, h4 {
+    color: $dark-gray;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 45px;
+      margin-top: 50px;
+    }
+
+    a {
+      color: $dark-gray;
+    }
 }
 
-h2, h4 {
-color: $dark-gray;
-text-align: center;
-margin-bottom: 40px;
-margin-top: 30px;
-}
 
-h2 {
-  font-size: 45px;
-  margin-top: 50px;
-}
-
-a {
-  color: $dark-gray;
-}
