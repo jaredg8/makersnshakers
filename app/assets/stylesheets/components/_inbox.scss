@@ -19,14 +19,17 @@ h3{
 .inbox {
   background-color: white;
   border-radius: 5px;
-  border: #D23333 solid 0.4px;
+
   width: 900px;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
+  color: #424242;
+
   // text-align: center;
 
 }
@@ -50,6 +53,16 @@ p {
 .row {
   border-bottom: #eaeaea solid 0.2px;
   padding-top: 7px;
-
 }
+
+.inbox-icons {
+  height: 10px;
+  color: #D23333;
+  margin-left: 1.5px;
+}
+
+.col-xs-2 a.inbox-icons:hover {
+  background-color: yellow;
+}
+
 
