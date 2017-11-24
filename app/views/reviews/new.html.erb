@@ -1,20 +1,26 @@
-<h1><%= @review.id %></h1>
 
-<div class="wrapper">
-  <div class="form-container">
-    <div class="container">
-      <h3>The Awesome Review Page!</h3>
-      <div class="review_form">
+<div class="container text-center">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="transaction-box-wrapper">
+      <div class="transaction-bg" style="background-image: url('<%=cl_image_path @transaction.item.photos.first.path, crop: :fill %>')">
+      </div>
+      <div class="transaction-box-body">
+        <h3>Review</h3>
         <%= simple_form_for [@transaction, @review] do |f| %>
-          <%= f.input :text, label:false, placeholder: 'Any feedback about the transaction?' %>
-          <%= f.input :rating, collection: 1..5, label:false, prompt: 'Rate the transaction 1-5', as: :radio_buttons, class: "radio"  %>
-          <%= f.submit " Submit ", :class => "btn btn-danger"%>
-          <%= link_to 'Cancel', root_path, class: 'btn btn-danger'%>
+        <%= f.input :text, label:false, placeholder: 'Any feedback about the transaction?' %>
+        <%= f.input :rating, collection: 1..5, label:false, prompt: 'Rate the transaction 1-5', as: :radio_buttons, class: "radio"  %>
+        <div class="transaction-button-block">
+          <%= link_to 'Cancel', root_path, class: 'btn btn-default transaction-button'%>
+          <%= f.submit " Submit ", :class => "btn btn-primary transaction-button"%>
+        </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 
 

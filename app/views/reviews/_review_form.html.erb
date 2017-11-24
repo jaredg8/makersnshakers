@@ -8,11 +8,9 @@
       </ul>
     </div>
   <% end %>
-      <div class="review_form">
-        <%= simple_form_for([@transaction, @review], remote: true) do |f| %>
-          <%= f.input :text, label:false, placeholder: 'Any feedback about the transaction?' %>
-          <%= f.input :rating, collection: 1..5, label:false, prompt: 'Rate the transaction 1-5', as: :radio_buttons, class: "radio"  %>
-          <%= f.submit " Submit ", :class => "btn btn-danger"%>
-          <%= link_to 'Cancel', root_path, class: 'btn btn-danger'%>
-        <% end %>
-      </div>
+      <%= simple_form_for([@transaction, @review], remote: true) do |f| %>
+      <%= f.input :text, label:false, placeholder: 'Any feedback about the transaction?' %>
+      <%= f.input :rating, collection: 1..5, label:false, prompt: 'Rate the transaction 1-5', as: :radio_buttons, class: "radio"  %>
+      <%= f.submit " Submit ", :class => "btn btn-danger"%>
+      <%= link_to 'Cancel', root_path, class: 'btn btn-danger'%>
+    <% end %>
