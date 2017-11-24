@@ -1,13 +1,82 @@
-<div class="tabs-container">
-  <div class="tabs">
-    <div class="tab">
-      <%= link_to 'Dashboard', dashboard_path %>
-    </div>
-    <div class="tab">
-      <%= link_to 'Calendar', calendar_path %>
-    </div>
-    <div class="tab active">
-      <%= link_to 'Messages', messages_path %>
+<div class="container">
+  <div class="tabs-container">
+    <div class="tabs">
+      <div class="tab">
+        <%= link_to 'Dashboard', dashboard_path %>
+      </div>
+      <div class="tab">
+        <%= link_to 'Calendar', calendar_path %>
+      </div>
+      <div class="tab active">
+        <%= link_to 'Messages', messages_path %>
+      </div>
     </div>
   </div>
 </div>
+
+<h3>Messages</h3>
+<div class="container inbox">
+  <div class="row red-text yellow-background">
+    <div class="col-xs-3">
+      <h5>Name</h5>
+    </div>
+    <div class="col-xs-3">
+      <h5>Subject</h5>
+    </div>
+    <div class="col-xs-4">
+     <h5>Message</h5>
+   </div>
+   <div class="col-xs-2">
+    <h5>Date</h5>
+   </div>
+  </div>
+
+  <div class="row green-background">
+    <div class="col-xs-3">
+      <p><%= image_tag User.first.facebook_picture_url, class:"avatar-sm"%>
+          <%= User.first.first_name + " " + User.first.last_name %></p>
+    </div>
+    <div class="col-xs-3">
+     <p>15" Macbook Pro</p>
+    </div>
+    <div class="col-xs-4">
+      <p><%=link_to "Hey, I was interested in renting your Macbook Pro since my lapt..."%></p>
+    </div>
+    <div class="col-xs-2">
+      <p>24/11/17</p>
+    </div>
+  </div>
+
+  <div class="row green-background">
+    <div class="col-xs-3">
+      <p><%= image_tag User.last.facebook_picture_url, class:"avatar-sm"%>
+      <%= User.last.first_name + " " + User.last.last_name %></p>
+    </div>
+    <div class="col-xs-3">
+      <p>Outdoor Space Grill</p>
+    </div>
+    <div class="col-xs-4">
+     <p><%=link_to "Thanks for your response, that sounds great. See you on Saturday!"%></p>
+    </div>
+    <div class="col-xs-2">
+      <p>24/11/17</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+      <p><%= image_tag User.last.facebook_picture_url, class:"avatar-sm"%>
+        <%= User.last.first_name + " " + User.last.last_name %></p>
+    </div>
+    <div class="col-xs-3">
+      <p>Outdoor Space Grill</p>
+    </div>
+    <div class="col-xs-4">
+      <p><%=link_to "Thank you, the printer worked great."%></p>
+    </div>
+    <div class="col-xs-2">
+      <p>20/11/17</p>
+    </div>
+  </div>
+</div>
+

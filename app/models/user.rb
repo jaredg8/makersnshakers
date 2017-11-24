@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :reviews, as: :reviewable
   has_many :transactions
   has_many :items
+  has_many :received_transactions, source: :transactions, through: :items
 
   # [...]
   def self.find_for_facebook_oauth(auth)
@@ -26,6 +27,10 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  def all_transactions
+     received_transactions + transactions
   end
 end
 

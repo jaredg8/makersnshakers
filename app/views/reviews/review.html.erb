@@ -14,3 +14,8 @@
     </div>
   </div>
 </div>
+
+<h1><%= @item.name %></h1>
+<h2>
+  <%= pluralize @item.reviews.size, "review" %>
+</h2>

@@ -1,6 +1,6 @@
 <% if current_user %>
 
-  <%= simple_form_for :transaction, url: new_item_transaction_path(@item), method: :get  do |f| %>
+  <%= simple_form_for :transaction, url: new_item_transaction_path(@item), method: :get, remote: true  do |f| %>
   <%= f.error_notification %>
 
   <div>

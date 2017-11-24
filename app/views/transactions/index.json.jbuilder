@@ -4,5 +4,6 @@ json.array!(@transactions) do |transaction|
   json.end transaction.end_date
   json.title transaction.item.name
   json.description transaction.item.description
-  json.url transaction_url(transaction, format: :html)
+  json.url item_url(transaction.item, format: :html)
+  json.color (transaction.user == transaction.item.user ? '#FF3300' : '#FF4466')
 end
