@@ -7,7 +7,7 @@
 }
 
 
-.show-product h1, h4, p {
+.show-product h1 h4 p {
   text-align: left;
 }
 
@@ -64,4 +64,9 @@
 
 .row-100 {
   width: 100%;
+}
+
+.hline {
+  height: 1px;
+  background: #919191;
 }

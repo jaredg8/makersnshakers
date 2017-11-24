@@ -30,52 +30,54 @@
     <h5>Date</h5>
    </div>
   </div>
-
   <div class="row green-background">
     <div class="col-xs-3">
-      <p><%= image_tag User.first.facebook_picture_url, class:"avatar-sm"%>
-          <%= User.first.first_name + " " + User.first.last_name %></p>
+      <p><%= image_tag 'toni.jpg', class:"avatar-sm"%>
+          Antoinette Panacek</p>
     </div>
     <div class="col-xs-3">
-     <p>15" Macbook Pro</p>
+     <p>Chopsticks set for 4</p>
     </div>
     <div class="col-xs-4">
-      <p><%=link_to "Hey, I was interested in renting your Macbook Pro since my lapt..."%></p>
+      <p><%=link_to "Hi, I'm hosting a dinner this weekend & want to rent your chopsticks..."%></p>
     </div>
     <div class="col-xs-2">
-      <p>24/11/17</p>
+      <p>24/11/17&nbsp;&nbsp;&nbsp;<%= link_to image_tag ('reply.png'), {class:"inbox-icons"}%><%= image_tag 'forward.png', class:"inbox-icons"%><%= image_tag 'trash.png', class:"inbox-icons"%></p>
     </div>
   </div>
 
   <div class="row green-background">
     <div class="col-xs-3">
-      <p><%= image_tag User.last.facebook_picture_url, class:"avatar-sm"%>
-      <%= User.last.first_name + " " + User.last.last_name %></p>
+      <p><%= image_tag 'jared.jpg', class:"avatar-sm"%>
+      Jared Guyer</p>
     </div>
     <div class="col-xs-3">
-      <p>Outdoor Space Grill</p>
+      <p>15" MacBook Pro</p>
     </div>
     <div class="col-xs-4">
      <p><%=link_to "Thanks for your response, that sounds great. See you on Saturday!"%></p>
     </div>
     <div class="col-xs-2">
-      <p>24/11/17</p>
+      <p>24/11/17&nbsp;&nbsp;&nbsp;<%= link_to image_tag ('reply.png'), {class:"inbox-icons"}%><%= image_tag 'forward.png', class:"inbox-icons"%><%= image_tag 'trash.png', class:"inbox-icons"%></p>
     </div>
   </div>
 
+<!-- link_to image_tag("Search.png", border: 0), {action: 'search', controller: 'pages'}, {class: 'dock-item'} -->
+
+
   <div class="row">
     <div class="col-xs-3">
-      <p><%= image_tag User.last.facebook_picture_url, class:"avatar-sm"%>
-        <%= User.last.first_name + " " + User.last.last_name %></p>
+      <p><%= image_tag 'michael.jpg', class:"avatar-sm"%>
+      Michael LTR</p>
     </div>
     <div class="col-xs-3">
-      <p>Outdoor Space Grill</p>
+      <p>Brother 3D Printer</p>
     </div>
     <div class="col-xs-4">
       <p><%=link_to "Thank you, the printer worked great."%></p>
     </div>
     <div class="col-xs-2">
-      <p>20/11/17</p>
+      <p>20/11/17&nbsp;&nbsp;&nbsp;<%= link_to image_tag ('reply.png'), {class:"inbox-icons"}%><%= image_tag 'forward.png', class:"inbox-icons"%><%= image_tag 'trash.png', class:"inbox-icons"%></p>
     </div>
   </div>
 </div>

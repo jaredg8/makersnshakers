@@ -1,0 +1,8 @@
+<%= link_to item_path(item) do %>
+<div class="dashboard-card-wrapper">
+  <div class="dashboard-card-bg" style="background-image: url('<%=cl_image_path item.photos.first.path, crop: :fill %>')"></div>
+  <div class="dashboard-card-body">
+    <h4><%= item.name.truncate(20) %></h4>
+  </div>
+</div>
+<% end %>
