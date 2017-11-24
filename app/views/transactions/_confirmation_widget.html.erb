@@ -37,7 +37,7 @@
 
         <%= simple_form_for transaction, url: item_transactions_path(item) do |f| %>
         <div class="transaction-button-block">
-          <%= f.submit "Confirm", dashboard_path, class: "btn btn-primary transaction-button" %>
+          <%= f.submit "Confirm", class: "btn btn-primary transaction-button" %>
           <%= link_to "Cancel", root_path, class: 'btn btn-default cancel-modal transaction-button'%>
           <%= hidden_field_tag :start_date, (params[:transaction][:start_date]) %>
           <%= hidden_field_tag :end_date, (params[:transaction][:end_date]) %>
