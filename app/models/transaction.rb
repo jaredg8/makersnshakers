@@ -3,6 +3,8 @@ class Transaction < ApplicationRecord
   belongs_to :item
 
   validates :start_date, :end_date, presence: true
+    has_many :reviews, as: :reviewable
+
 
   def final_price
     rental_days * item.price

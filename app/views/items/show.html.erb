@@ -45,6 +45,19 @@
         <div class="show-decription">
           <h4>Description</h4>
           <p><%= @item.description %></p>
+        </div>
+         <div class="show-review">
+          <h4>Reviews</h4>
+
+          <% @item.transactions.each do |transaction| %>
+            <% transaction.reviews.each do |review| %>
+              <p> Rating: <%= review.rating %> out of 5</p>
+              <p> Review: <%= review.text %> </p>
+              <p> Reviewer name: <%= review.user.name %></p>
+              <div class="hline"></div>
+            <% end %>
+          <% end %>
+
           <div class="back-button" style="width: 60px; margin: 20px 0px">
             <%= link_to "Back", items_path, class: "btn btn-primary btn-lg" %>
           </div>

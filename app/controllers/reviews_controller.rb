@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
       # Success scenario
       redirect_to items_path
     else
+      render 'items/show'
     end
   end
   private
