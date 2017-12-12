@@ -1,10 +1,3 @@
-// Specific CSS for your home-page
-// .btn-primary{
-//   background-color: #D23333;
-//   border-color: #d23333;
-//   opacity: 0.9;
-// }
-
 .banner {
   color: white;
   text-align: center;
@@ -39,9 +32,15 @@
   }
 }
 
+// search
+
 .home-search {
   input {
     height: 50px;
     border-radius: 5px;
   }
+}
+
+.fa-placholder {
+  font-family: "FontAwesome", "Source Sans Pro";
 }
