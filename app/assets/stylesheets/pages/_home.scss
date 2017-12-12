@@ -15,7 +15,7 @@
   h1 {
     font-size: 50px;
     font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(192,192,192,0.8);
+    color: $dark-gray;
   }
 
   p {
@@ -36,5 +36,12 @@
 .banner-content {
   h1 {
     margin-top: 120px;
+  }
+}
+
+.home-search {
+  input {
+    height: 50px;
+    border-radius: 5px;
   }
 }
