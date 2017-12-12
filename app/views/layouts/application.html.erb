@@ -10,8 +10,7 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
 </head>
 <body class="<%= params[:controller] %> <%= params[:action] %>">
-  <%= render 'shared/navbar' %>
-  <%#= render 'shared/searchbar' %>
+  <%= render 'shared/navbar' unless @disable_nav %>
   <%= yield %>
   <%= render 'shared/footer' %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJzDZ8qe6RqQVKTYKRDhOwlAHXCbqrRwM" %>
