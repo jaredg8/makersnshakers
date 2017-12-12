@@ -35,12 +35,15 @@
 // search
 
 .home-search {
+  color: $gray;
+  background-color: white;
+  border-radius: 5px;
+  height: 50px;
   input {
     height: 50px;
-    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: none;
   }
-}
-
-.fa-placholder {
-  font-family: "FontAwesome", "Source Sans Pro";
 }

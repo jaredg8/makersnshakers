@@ -5,7 +5,8 @@
       <h1>Helping makers get what they need<br>And lend what they don’t</h1>
       <div class="home-search form-inline">
         <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
-        <%= f.input :name, label: false, placeholder: [raw("&#xf002;") + "test"] , class: "fa-placholder" %>
+          <span class="fa fa-search"></span>
+          <%= f.input :name, label: false, placeholder: "What are you looking for?"%>
         <% end %>
       </div>
     </div>
