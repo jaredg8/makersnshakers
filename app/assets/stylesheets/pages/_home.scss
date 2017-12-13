@@ -39,6 +39,8 @@
   background-color: white;
   border-radius: 5px;
   height: 50px;
+  width: 500px;
+  margin: auto;
   input {
     height: 50px;
     border: none;
@@ -53,4 +55,8 @@
     box-shadow: none;
     -webkit-box-shadow: none;
   }
+}
+
+.search .form-group.search_name {
+    width: 450px;
 }
