@@ -1,16 +1,63 @@
-// Specific CSS for your home-page
-// .btn-primary{
-//   background-color: #D23333;
-//   border-color: #d23333;
-//   opacity: 0.9;
-// }
+.banner {
+  color: white;
+  text-align: center;
+  height: 573px;
+  background-position: center;
+  position: relative;
 
-.btn-primary hover {
-  border-color: #fdd31c;
-  background-color: #FDD835;
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: $dark-gray;
+  }
 
+  p {
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin-bottom: 30px;
+  }
 }
 
-.btn{
-  opacity: 0.9;
+.home-wave  {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.banner-content {
+  h1 {
+    margin-top: 120px;
+  }
+}
+
+// search
+
+.home-search {
+  color: $gray;
+  background-color: white;
+  border-radius: 5px;
+  height: 50px;
+  width: 500px;
+  margin: auto;
+  box-shadow: 0px 15px 40px -15px rgba(0, 0, 0, 0.3);
+  input {
+    height: 50px;
+    border: none;
+    border-color: none;
+    -webkit-appearance:none;
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  input:focus{
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+}
+
+.search .form-group.search_name {
+    width: 450px;
 }

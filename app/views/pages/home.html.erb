@@ -1,16 +1,17 @@
-<div class="banner" style="background-image: url('<%= image_path 'yellow-banner.jpg' %>');">
-  <div class="banner-content">
-    <h1>Helping Makers Get What They Need</h1>
-    <h1>And Lend What They Don’t </h1>
-      <div class="form-inline">
+<div class="banner" style="background-image: url('<%= image_path 'home-banner.png' %>');">
+  <%= render 'shared/navbar' %>
+  <div class="container">
+    <div class="banner-content">
+      <h1>Helping makers get what they need<br>And lend what they don’t</h1>
+      <div class="home-search form-inline">
         <%= simple_form_for(:search, url: items_path, html: { method: :get }) do |f| %>
-      <div class="form-group">
-        <%= f.input :name, label: false, placeholder: 'Find an item...' %>
-        <%= f.submit " Search ", :class => "btn btn-danger" %>
+          <span class="fa fa-search"></span>
+          <%= f.input :name, label: false, placeholder: "What are you looking for?"%>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
+  <%= image_tag "home-wave.svg", class: "home-wave" %>
 </div>
 
 <%= render 'shared/category_button' %>
