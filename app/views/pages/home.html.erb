@@ -1,6 +1,5 @@
-<div class="banner" style="background-image: url('<%= image_path 'home-banner.png' %>');">
-  <%= render 'shared/navbar' %>
-  <div class="container">
+<%= render 'shared/navbar' %>
+<div class="banner">
     <div class="banner-content">
       <h1>Helping makers get what they need<br>And lend what they don’t</h1>
       <div class="home-search form-inline">
@@ -10,10 +9,10 @@
         <% end %>
       </div>
     </div>
-  </div>
-  <%= image_tag "home-wave.svg", class: "home-wave" %>
+  <%#= image_tag "home-wave.svg", class: "home-wave" %>
 </div>
 
 <%= render 'shared/category_button' %>
 
 
+<!--  style="background-image: url('<%= image_path 'crafts-banner.jpg' %>');" -->
